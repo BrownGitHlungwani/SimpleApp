@@ -7,6 +7,7 @@ export declare interface DetailCardDto {
     task: string,
     gamification: string,
     imageSrc: string,
+    heading: string
 }
 
 interface DetailCardProps {
@@ -21,13 +22,16 @@ export const DetailsCard: React.FC<DetailCardProps> = ({ data }) => {
     }
 
     return (
-        <>
+        <div>
+            <h1 className="text-center text-3xl font-semibold">{data.heading}</h1>
             <div className="w-full sm:max-w-5xl bg-white rounded-3xl ring-1 ring-gray-300 px-4 py-4 mb-8 ml-20 mt-20">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <button>
+                    <div className="bg-gray-200 rounded-lg h-[280px]">
                         <img src={data.imageSrc} className="h-[280px] sm:w-[493px] w-full rounded-md" />
-                        <PlayCircleIcon className="absolute h-20 w-20 mt-[-12rem] ml-[6rem] text-white" />
-                    </button>
+                        <button>
+                            <PlayCircleIcon className="absolute h-20 w-20 mt-[-12rem] ml-[6rem] text-white bg-gray-800 rounded-full" />
+                        </button>
+                    </div>
                     <div className="sm:col-span-2 ml-4">
                         <div className="flex flex-wrap justify-between">
                             <h1 className="text-2xl w-[28rem] font-semibold ">{data.name}</h1>
@@ -37,7 +41,7 @@ export const DetailsCard: React.FC<DetailCardProps> = ({ data }) => {
                         </div>
                         <h3 className="text-sm text-gray-400 pt-2">By Wits</h3>
                         <p className="font-medium font-sans text-sm pt-6 leading-loose md:leading-relaxed">{data.task}</p>
-                        <p className="pl-2 text-gray-500 mt-2">{data.gamification}</p>
+                        <p className="text-gray-500 mt-2">{data.gamification}</p>
                         <button className="mt-6 flex text-sm px-6 py-1 ring-1 ring-gray-400 cursor-text  rounded-3xl bg-gray-200"
                             onClick={handleComponent}
                         >
@@ -59,7 +63,7 @@ export const DetailsCard: React.FC<DetailCardProps> = ({ data }) => {
                     </ul>
                 </div>
             }
-        </>
+        </div>
 
     )
 }
