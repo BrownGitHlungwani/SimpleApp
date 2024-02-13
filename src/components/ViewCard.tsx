@@ -24,7 +24,7 @@ export const DetailsCard: React.FC<DetailCardProps> = ({ data }) => {
     return (
         <div>
             <h1 className="text-center text-3xl font-semibold">{data.heading}</h1>
-            <div className="w-full sm:max-w-5xl bg-white rounded-3xl ring-1 ring-gray-300 px-4 py-4 mb-8 ml-20 mt-20">
+            <div className="w-full sm:max-w-5xl bg-white rounded-3xl ring-1 ring-gray-300 px-4 py-4 mb-8 ml-[13rem] mt-20">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="bg-gray-200 rounded-lg h-[280px]">
                         <img src={data.imageSrc} className="h-[280px] sm:w-[493px] w-full rounded-md" />
